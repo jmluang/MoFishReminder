@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		880631B826B9346800116911 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880631B726B9346800116911 /* Tests_iOS.swift */; };
+		880631C326B9346800116911 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880631C226B9346800116911 /* Tests_macOS.swift */; };
+		880631C526B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */; };
+		880631C626B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */; };
+		880631C726B9346800116911 /* FishTouchReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319B26B9346500116911 /* FishTouchReminderApp.swift */; };
+		880631C826B9346800116911 /* FishTouchReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319B26B9346500116911 /* FishTouchReminderApp.swift */; };
+		880631C926B9346800116911 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319C26B9346500116911 /* ContentView.swift */; };
+		880631CA26B9346800116911 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319C26B9346500116911 /* ContentView.swift */; };
+		880631CB26B9346800116911 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319D26B9346500116911 /* Persistence.swift */; };
+		880631CC26B9346800116911 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319D26B9346500116911 /* Persistence.swift */; };
+		880631CD26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
+		880631CE26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		880631B426B9346800116911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8806319426B9346400116911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 880631A226B9346800116911;
+			remoteInfo = "FishTouchReminder (iOS)";
+		};
+		880631BF26B9346800116911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8806319426B9346400116911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 880631AA26B9346800116911;
+			remoteInfo = "FishTouchReminder (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8806319A26B9346500116911 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		8806319B26B9346500116911 /* FishTouchReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTouchReminderApp.swift; sourceTree = "<group>"; };
+		8806319C26B9346500116911 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8806319D26B9346500116911 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		8806319E26B9346800116911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		880631A326B9346800116911 /* FishTouchReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishTouchReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		880631A626B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880631AB26B9346800116911 /* FishTouchReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishTouchReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		880631AD26B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880631AE26B9346800116911 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		880631B326B9346800116911 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880631B726B9346800116911 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		880631B926B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880631BE26B9346800116911 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		880631C226B9346800116911 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		880631C426B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		880631A026B9346800116911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631A826B9346800116911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631B026B9346800116911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631BB26B9346800116911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8806319326B9346400116911 = {
+			isa = PBXGroup;
+			children = (
+				8806319826B9346500116911 /* Shared */,
+				880631A526B9346800116911 /* iOS */,
+				880631AC26B9346800116911 /* macOS */,
+				880631B626B9346800116911 /* Tests iOS */,
+				880631C126B9346800116911 /* Tests macOS */,
+				880631A426B9346800116911 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8806319826B9346500116911 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8806319B26B9346500116911 /* FishTouchReminderApp.swift */,
+				8806319C26B9346500116911 /* ContentView.swift */,
+				8806319D26B9346500116911 /* Persistence.swift */,
+				8806319E26B9346800116911 /* Assets.xcassets */,
+				8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		880631A426B9346800116911 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880631A326B9346800116911 /* FishTouchReminder.app */,
+				880631AB26B9346800116911 /* FishTouchReminder.app */,
+				880631B326B9346800116911 /* Tests iOS.xctest */,
+				880631BE26B9346800116911 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880631A526B9346800116911 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				880631A626B9346800116911 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		880631AC26B9346800116911 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				880631AD26B9346800116911 /* Info.plist */,
+				880631AE26B9346800116911 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		880631B626B9346800116911 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				880631B726B9346800116911 /* Tests_iOS.swift */,
+				880631B926B9346800116911 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		880631C126B9346800116911 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				880631C226B9346800116911 /* Tests_macOS.swift */,
+				880631C426B9346800116911 /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		880631A226B9346800116911 /* FishTouchReminder (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880631D126B9346800116911 /* Build configuration list for PBXNativeTarget "FishTouchReminder (iOS)" */;
+			buildPhases = (
+				8806319F26B9346800116911 /* Sources */,
+				880631A026B9346800116911 /* Frameworks */,
+				880631A126B9346800116911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FishTouchReminder (iOS)";
+			productName = "FishTouchReminder (iOS)";
+			productReference = 880631A326B9346800116911 /* FishTouchReminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		880631AA26B9346800116911 /* FishTouchReminder (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880631D426B9346800116911 /* Build configuration list for PBXNativeTarget "FishTouchReminder (macOS)" */;
+			buildPhases = (
+				880631A726B9346800116911 /* Sources */,
+				880631A826B9346800116911 /* Frameworks */,
+				880631A926B9346800116911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FishTouchReminder (macOS)";
+			productName = "FishTouchReminder (macOS)";
+			productReference = 880631AB26B9346800116911 /* FishTouchReminder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		880631B226B9346800116911 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880631D726B9346800116911 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				880631AF26B9346800116911 /* Sources */,
+				880631B026B9346800116911 /* Frameworks */,
+				880631B126B9346800116911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880631B526B9346800116911 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = 880631B326B9346800116911 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		880631BD26B9346800116911 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880631DA26B9346800116911 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				880631BA26B9346800116911 /* Sources */,
+				880631BB26B9346800116911 /* Frameworks */,
+				880631BC26B9346800116911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				880631C026B9346800116911 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = 880631BE26B9346800116911 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8806319426B9346400116911 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					880631A226B9346800116911 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					880631AA26B9346800116911 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					880631B226B9346800116911 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 880631A226B9346800116911;
+					};
+					880631BD26B9346800116911 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 880631AA26B9346800116911;
+					};
+				};
+			};
+			buildConfigurationList = 8806319726B9346500116911 /* Build configuration list for PBXProject "FishTouchReminder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8806319326B9346400116911;
+			productRefGroup = 880631A426B9346800116911 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				880631A226B9346800116911 /* FishTouchReminder (iOS) */,
+				880631AA26B9346800116911 /* FishTouchReminder (macOS) */,
+				880631B226B9346800116911 /* Tests iOS */,
+				880631BD26B9346800116911 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		880631A126B9346800116911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880631CD26B9346800116911 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631A926B9346800116911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880631CE26B9346800116911 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631B126B9346800116911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631BC26B9346800116911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8806319F26B9346800116911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880631C526B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */,
+				880631CB26B9346800116911 /* Persistence.swift in Sources */,
+				880631C726B9346800116911 /* FishTouchReminderApp.swift in Sources */,
+				880631C926B9346800116911 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631A726B9346800116911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880631C626B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */,
+				880631CC26B9346800116911 /* Persistence.swift in Sources */,
+				880631C826B9346800116911 /* FishTouchReminderApp.swift in Sources */,
+				880631CA26B9346800116911 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631AF26B9346800116911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880631B826B9346800116911 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880631BA26B9346800116911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880631C326B9346800116911 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		880631B526B9346800116911 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 880631A226B9346800116911 /* FishTouchReminder (iOS) */;
+			targetProxy = 880631B426B9346800116911 /* PBXContainerItemProxy */;
+		};
+		880631C026B9346800116911 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 880631AA26B9346800116911 /* FishTouchReminder (macOS) */;
+			targetProxy = 880631BF26B9346800116911 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		880631CF26B9346800116911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		880631D026B9346800116911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		880631D226B9346800116911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.luangcn.xcode.FishTouchReminder;
+				PRODUCT_NAME = FishTouchReminder;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		880631D326B9346800116911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.luangcn.xcode.FishTouchReminder;
+				PRODUCT_NAME = FishTouchReminder;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		880631D526B9346800116911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luangcn.xcode.FishTouchReminder;
+				PRODUCT_NAME = FishTouchReminder;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		880631D626B9346800116911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luangcn.xcode.FishTouchReminder;
+				PRODUCT_NAME = FishTouchReminder;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		880631D826B9346800116911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.luangcn.xcode.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FishTouchReminder (iOS)";
+			};
+			name = Debug;
+		};
+		880631D926B9346800116911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.luangcn.xcode.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "FishTouchReminder (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		880631DB26B9346800116911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.luangcn.xcode.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "FishTouchReminder (macOS)";
+			};
+			name = Debug;
+		};
+		880631DC26B9346800116911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = WZ49F7S2T3;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.luangcn.xcode.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "FishTouchReminder (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8806319726B9346500116911 /* Build configuration list for PBXProject "FishTouchReminder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880631CF26B9346800116911 /* Debug */,
+				880631D026B9346800116911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880631D126B9346800116911 /* Build configuration list for PBXNativeTarget "FishTouchReminder (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880631D226B9346800116911 /* Debug */,
+				880631D326B9346800116911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880631D426B9346800116911 /* Build configuration list for PBXNativeTarget "FishTouchReminder (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880631D526B9346800116911 /* Debug */,
+				880631D626B9346800116911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880631D726B9346800116911 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880631D826B9346800116911 /* Debug */,
+				880631D926B9346800116911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880631DA26B9346800116911 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880631DB26B9346800116911 /* Debug */,
+				880631DC26B9346800116911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8806319A26B9346500116911 /* Shared.xcdatamodel */,
+			);
+			currentVersion = 8806319A26B9346500116911 /* Shared.xcdatamodel */;
+			path = FishTouchReminder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8806319426B9346400116911 /* Project object */;
+}
