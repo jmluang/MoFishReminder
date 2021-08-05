@@ -19,6 +19,10 @@
 		880631CC26B9346800116911 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319D26B9346500116911 /* Persistence.swift */; };
 		880631CD26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
 		880631CE26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
+		88F98C8A26BB83C300D74836 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C8926BB83C300D74836 /* MainView.swift */; };
+		88F98C8B26BB83C300D74836 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C8926BB83C300D74836 /* MainView.swift */; };
+		88F98C9726BBDB3800D74836 /* AuthSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C9626BBDB3800D74836 /* AuthSettings.swift */; };
+		88F98C9826BBDB3800D74836 /* AuthSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C9626BBDB3800D74836 /* AuthSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,8 @@
 		880631BE26B9346800116911 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		880631C226B9346800116911 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		880631C426B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F98C8926BB83C300D74836 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		88F98C9626BBDB3800D74836 /* AuthSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 				8806319D26B9346500116911 /* Persistence.swift */,
 				8806319E26B9346800116911 /* Assets.xcassets */,
 				8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */,
+				88F98C8926BB83C300D74836 /* MainView.swift */,
+				88F98C9626BBDB3800D74836 /* AuthSettings.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -316,9 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F98C9726BBDB3800D74836 /* AuthSettings.swift in Sources */,
 				880631C526B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */,
 				880631CB26B9346800116911 /* Persistence.swift in Sources */,
 				880631C726B9346800116911 /* FishTouchReminderApp.swift in Sources */,
+				88F98C8A26BB83C300D74836 /* MainView.swift in Sources */,
 				880631C926B9346800116911 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,9 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F98C9826BBDB3800D74836 /* AuthSettings.swift in Sources */,
 				880631C626B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */,
 				880631CC26B9346800116911 /* Persistence.swift in Sources */,
 				880631C826B9346800116911 /* FishTouchReminderApp.swift in Sources */,
+				88F98C8B26BB83C300D74836 /* MainView.swift in Sources */,
 				880631CA26B9346800116911 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = WZ49F7S2T3;
