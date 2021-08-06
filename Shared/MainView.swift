@@ -10,9 +10,22 @@ import UserNotifications
 
 struct MainView: View {
     @EnvironmentObject var Settings: AuthSettings
-    @State private var thetitle = "提醒下你"
-    @State private var thebody = "是时候提肛了喔"
-    @State private var isOn = true
+    @State private var thetitle: String = "提醒下你"
+    @State private var thebody: String = "是时候提肛了喔"
+    @State private var isOn: Bool = true
+    @State private var startTime: Date = Date()
+    @State private var endTime: Date = Date()
+    @State private var allways: Bool = true
+    @State private var interval:Int = 30
+    
+    func settingDate() {
+        var components = DateComponents()
+        components.hour = 8
+        components.minute = 0
+        startTime = Calendar.current.date(from: components) ?? Date()
+        components.hour = 18
+        endTime = Calendar.current.date(from: components) ?? Date()
+    }
     
     func notificationAction() {
         if !isOn {
@@ -78,6 +91,27 @@ struct MainView: View {
                     .font(Font.system(size: 18, design: .default))
                 Spacer()
             }
+            HStack {
+                Toggle(isOn: $allways) {
+                    Text("全天")
+                }
+                Group() {
+                    DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
+                        .fixedSize()
+                    Text("-")
+                    DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label:{})
+                        .fixedSize()
+                }.disabled(allways)
+            }
+            HStack {
+                Text("每")
+                Stepper(value: $interval, in: 0...360) {
+                    Text("\(interval)")
+                        .background(Color.white)
+                        .font(Font.system(size: 22))
+                }
+                Text("分钟")
+            }
             Spacer()
             HStack {
                 Toggle(isOn: $isOn) {
@@ -88,7 +122,7 @@ struct MainView: View {
                 }
             }
             Spacer()
-        }
+        }.onAppear(perform: settingDate)
     }
 }
 
