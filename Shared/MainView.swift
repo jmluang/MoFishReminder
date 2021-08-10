@@ -31,6 +31,11 @@ struct MainView: View {
         if !isOn {
             return
         }
+        
+        print("\(startTime)")
+        print("\(endTime)")
+        print("\(allways)")
+        print("\(interval)")
         let uuidString = UUID().uuidString
         let content = UNMutableNotificationContent()
         content.title = thetitle
@@ -95,13 +100,15 @@ struct MainView: View {
                 Toggle(isOn: $allways) {
                     Text("全天")
                 }
-                Group() {
-                    DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
-                        .fixedSize()
-                    Text("-")
-                    DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label:{})
-                        .fixedSize()
-                }.disabled(allways)
+                if !allways {
+                    Group() {
+                        DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: { /*@START_MENU_TOKEN@*/Text("Date")/*@END_MENU_TOKEN@*/ })
+                            .fixedSize()
+                        Text("-")
+                        DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label:{})
+                            .fixedSize()
+                    }
+                }
             }
             HStack {
                 Text("每")
@@ -109,6 +116,7 @@ struct MainView: View {
                     Text("\(interval)")
                         .background(Color.white)
                         .font(Font.system(size: 22))
+                        .fixedSize()
                 }
                 Text("分钟")
             }
