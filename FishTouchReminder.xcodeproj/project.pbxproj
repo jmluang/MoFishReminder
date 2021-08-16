@@ -19,6 +19,10 @@
 		880631CC26B9346800116911 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319D26B9346500116911 /* Persistence.swift */; };
 		880631CD26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
 		880631CE26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
+		88501F5D26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */; };
+		88501F5E26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */; };
+		88535FAD26C3BD9300CE1E26 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88535FAC26C3BD9300CE1E26 /* Task.swift */; };
+		88535FAE26C3BD9300CE1E26 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88535FAC26C3BD9300CE1E26 /* Task.swift */; };
 		88F98C8A26BB83C300D74836 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C8926BB83C300D74836 /* MainView.swift */; };
 		88F98C8B26BB83C300D74836 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C8926BB83C300D74836 /* MainView.swift */; };
 		88F98C9726BBDB3800D74836 /* AuthSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F98C9626BBDB3800D74836 /* AuthSettings.swift */; };
@@ -59,6 +63,8 @@
 		880631BE26B9346800116911 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		880631C226B9346800116911 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		880631C426B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLightSelecter.swift; sourceTree = "<group>"; };
+		88535FAC26C3BD9300CE1E26 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		88F98C8926BB83C300D74836 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		88F98C9626BBDB3800D74836 /* AuthSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,8 @@
 				8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */,
 				88F98C8926BB83C300D74836 /* MainView.swift */,
 				88F98C9626BBDB3800D74836 /* AuthSettings.swift */,
+				88535FAC26C3BD9300CE1E26 /* Task.swift */,
+				88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -327,8 +335,10 @@
 				88F98C9726BBDB3800D74836 /* AuthSettings.swift in Sources */,
 				880631C526B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */,
 				880631CB26B9346800116911 /* Persistence.swift in Sources */,
+				88501F5D26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */,
 				880631C726B9346800116911 /* FishTouchReminderApp.swift in Sources */,
 				88F98C8A26BB83C300D74836 /* MainView.swift in Sources */,
+				88535FAD26C3BD9300CE1E26 /* Task.swift in Sources */,
 				880631C926B9346800116911 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,8 +350,10 @@
 				88F98C9826BBDB3800D74836 /* AuthSettings.swift in Sources */,
 				880631C626B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */,
 				880631CC26B9346800116911 /* Persistence.swift in Sources */,
+				88501F5E26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */,
 				880631C826B9346800116911 /* FishTouchReminderApp.swift in Sources */,
 				88F98C8B26BB83C300D74836 /* MainView.swift in Sources */,
+				88535FAE26C3BD9300CE1E26 /* Task.swift in Sources */,
 				880631CA26B9346800116911 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
