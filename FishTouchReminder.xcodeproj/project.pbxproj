@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88038C2B26CB51D70071C87D /* SystemTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88038C2A26CB51D70071C87D /* SystemTheme.swift */; };
+		88038C2C26CB51D70071C87D /* SystemTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88038C2A26CB51D70071C87D /* SystemTheme.swift */; };
 		880631B826B9346800116911 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880631B726B9346800116911 /* Tests_iOS.swift */; };
 		880631C326B9346800116911 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880631C226B9346800116911 /* Tests_macOS.swift */; };
 		880631C526B9346800116911 /* FishTouchReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */; };
@@ -19,6 +21,10 @@
 		880631CC26B9346800116911 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806319D26B9346500116911 /* Persistence.swift */; };
 		880631CD26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
 		880631CE26B9346800116911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8806319E26B9346800116911 /* Assets.xcassets */; };
+		8824C11726CE56930025952F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824C11626CE56930025952F /* TaskView.swift */; };
+		8824C11826CE56930025952F /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8824C11626CE56930025952F /* TaskView.swift */; };
+		882F5EAC26CD0F4100957AFD /* MyTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F5EAB26CD0F4100957AFD /* MyTimeInterval.swift */; };
+		882F5EAD26CD0F4100957AFD /* MyTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F5EAB26CD0F4100957AFD /* MyTimeInterval.swift */; };
 		88501F5D26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */; };
 		88501F5E26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */; };
 		88535FAD26C3BD9300CE1E26 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88535FAC26C3BD9300CE1E26 /* Task.swift */; };
@@ -47,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88038C2A26CB51D70071C87D /* SystemTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemTheme.swift; sourceTree = "<group>"; };
 		8806319A26B9346500116911 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		8806319B26B9346500116911 /* FishTouchReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTouchReminderApp.swift; sourceTree = "<group>"; };
 		8806319C26B9346500116911 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +70,8 @@
 		880631BE26B9346800116911 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		880631C226B9346800116911 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		880631C426B9346800116911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8824C11626CE56930025952F /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		882F5EAB26CD0F4100957AFD /* MyTimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTimeInterval.swift; sourceTree = "<group>"; };
 		88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkLightSelecter.swift; sourceTree = "<group>"; };
 		88535FAC26C3BD9300CE1E26 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		88F98C8926BB83C300D74836 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -116,15 +125,13 @@
 		8806319826B9346500116911 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8824C11526CE564A0025952F /* Utils */,
+				8824C11326CE562D0025952F /* Model */,
+				8824C11226CE561C0025952F /* EnviromentObjects */,
+				8824C11126CE55F90025952F /* View */,
 				8806319B26B9346500116911 /* FishTouchReminderApp.swift */,
-				8806319C26B9346500116911 /* ContentView.swift */,
-				8806319D26B9346500116911 /* Persistence.swift */,
 				8806319E26B9346800116911 /* Assets.xcassets */,
 				8806319926B9346500116911 /* FishTouchReminder.xcdatamodeld */,
-				88F98C8926BB83C300D74836 /* MainView.swift */,
-				88F98C9626BBDB3800D74836 /* AuthSettings.swift */,
-				88535FAC26C3BD9300CE1E26 /* Task.swift */,
-				88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -173,6 +180,43 @@
 				880631C426B9346800116911 /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		8824C11126CE55F90025952F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88501F5C26CA600A006A6C29 /* DarkLightSelecter.swift */,
+				88F98C8926BB83C300D74836 /* MainView.swift */,
+				8806319C26B9346500116911 /* ContentView.swift */,
+				8824C11626CE56930025952F /* TaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8824C11226CE561C0025952F /* EnviromentObjects */ = {
+			isa = PBXGroup;
+			children = (
+				88F98C9626BBDB3800D74836 /* AuthSettings.swift */,
+				88038C2A26CB51D70071C87D /* SystemTheme.swift */,
+			);
+			path = EnviromentObjects;
+			sourceTree = "<group>";
+		};
+		8824C11326CE562D0025952F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8806319D26B9346500116911 /* Persistence.swift */,
+				88535FAC26C3BD9300CE1E26 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8824C11526CE564A0025952F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				882F5EAB26CD0F4100957AFD /* MyTimeInterval.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,8 +382,11 @@
 				88501F5D26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */,
 				880631C726B9346800116911 /* FishTouchReminderApp.swift in Sources */,
 				88F98C8A26BB83C300D74836 /* MainView.swift in Sources */,
+				88038C2B26CB51D70071C87D /* SystemTheme.swift in Sources */,
 				88535FAD26C3BD9300CE1E26 /* Task.swift in Sources */,
 				880631C926B9346800116911 /* ContentView.swift in Sources */,
+				8824C11726CE56930025952F /* TaskView.swift in Sources */,
+				882F5EAC26CD0F4100957AFD /* MyTimeInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,8 +400,11 @@
 				88501F5E26CA600A006A6C29 /* DarkLightSelecter.swift in Sources */,
 				880631C826B9346800116911 /* FishTouchReminderApp.swift in Sources */,
 				88F98C8B26BB83C300D74836 /* MainView.swift in Sources */,
+				88038C2C26CB51D70071C87D /* SystemTheme.swift in Sources */,
 				88535FAE26C3BD9300CE1E26 /* Task.swift in Sources */,
 				880631CA26B9346800116911 /* ContentView.swift in Sources */,
+				8824C11826CE56930025952F /* TaskView.swift in Sources */,
+				882F5EAD26CD0F4100957AFD /* MyTimeInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

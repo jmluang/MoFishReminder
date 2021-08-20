@@ -10,14 +10,16 @@ import UserNotifications
 
 struct MainView: View {
     @EnvironmentObject var Settings: AuthSettings
-    @State private var isDark: Bool = false
+    @EnvironmentObject var Theme: SystemTheme
     @State private var thetitle: String = "提醒下你"
     @State private var thebody: String = "是时候提肛了喔"
     @State private var isOn: Bool = true
     @State private var startTime: Date = Date()
     @State private var endTime: Date = Date()
     @State private var allways: Bool = true
-    @State private var interval:Int = 1
+    @State private var interval:Int = 20
+    @State var receiver = Timer.publish(every: 1, on: .current, in: .default).autoconnect()
+    @State private var tasks: [Task] = []
     
     func settingDate() {
         var components = DateComponents()
@@ -32,22 +34,20 @@ struct MainView: View {
         if !isOn {
             return
         }
-        let task = Task(Id: UUID().uuidString, Title: thetitle, Body: thebody, Interval: interval, Repeat: true)
         
+        let task = Task(Title: thetitle, Body: thebody, Interval: interval, Repeat: true, CreateTime: Date())
         createNotification(task: task)
-        
-        getNotificationList()
     }
     
     func createNotification(task: Task) {
         
-        print(task)
         let content = UNMutableNotificationContent()
         content.title = task.Title
         content.body = task.Body
+        content.userInfo["create_time"] = task.CreateTime
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(task.Interval * 60), repeats: task.Repeat)
-        let request = UNNotificationRequest(identifier: task.Id, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: task.id.uuidString, content: content, trigger: trigger)
 
         // Schedule the request with the system.
         let notificationCenter = UNUserNotificationCenter.current()
@@ -55,35 +55,61 @@ struct MainView: View {
             if error != nil {
                 // Handle any errors.
                 print("Time Interval Notification scheduled error: \(String(describing: error))")
-
             }
         }
     }
     
     func getNotificationList() {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
-        formatter.locale = Locale(identifier: "zh_CN")
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getPendingNotificationRequests(completionHandler: { requests in
+            guard requests.count > 0 else {
+                tasks.removeAll()
+                if !isOn {
+                    return
+                }
+                return
+            }
+            
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
+            formatter.locale = Locale(identifier: "zh_CN")
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .medium
+            
             for request in requests {
-                print(request)
-                let id = request.identifier
-                print(id)
-                guard let trigger = request.trigger as? UNTimeIntervalNotificationTrigger else {return}
-                print(trigger)
-                let nextTimeTrigger = trigger.nextTriggerDate()
-                print(nextTimeTrigger!)
-                print(formatter.string(from: nextTimeTrigger!))
+//                print(request)
+//                let id = request.identifier
+                guard let trigger = request.trigger as? UNTimeIntervalNotificationTrigger else { continue }
+                let nextTriggerDate = trigger.nextTriggerDate()
+                guard let create_time = request.content.userInfo["create_time"] as? Date else { continue }
+//                print(create_time)
+                
+                let interval = nextTriggerDate!.timeIntervalSince(create_time) - trigger.timeInterval
+                
+                let count_down = trigger.timeInterval - interval.truncatingRemainder(dividingBy: trigger.timeInterval)
+//                print(count_down.stringTime(false))
+                
+                var current = Date()
+                current.addTimeInterval(count_down)
+//                print(current.description(with: Locale(identifier: "ZH_CN")))
+
+                let t = Task(id: UUID(uuidString: request.identifier)!, Title: request.content.title, Body: request.content.body, Interval: Int(trigger.timeInterval), Repeat: trigger.repeats, CreateTime: create_time, NextTriggertime: formatter.string(from: current), CountDownString: count_down.stringTime(false))
+                let index = tasks.indexOf(task: t)
+                if index == -1 {
+                    tasks.append(t)
+                } else {
+                    DispatchQueue.main.async {
+                        tasks[index].CountDownString = t.CountDownString
+                        tasks[index].NextTriggertime = t.NextTriggertime
+                    }
+                }
             }
         })
     }
     
     func clearAllNotification() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        tasks.removeAll()
     }
     
     var body: some View {
@@ -92,7 +118,7 @@ struct MainView: View {
                 .background(Settings.isAuthNotification ? Color.green : Color.red)
                 .padding()
             Spacer(minLength: 0)
-            DarkLightSelecter(isDark: isDark)
+            DarkLightSelecter().environmentObject(Theme)
         }
         VStack {
             Spacer()
@@ -137,11 +163,19 @@ struct MainView: View {
                 Text("每")
                 Stepper(value: $interval, in: 1...360) {
                     Text("\(interval)")
-                        .background(Color.white)
                         .font(Font.system(size: 22))
+                        .foregroundColor(Theme.isDark ? Color.white : Color.black)
                         .fixedSize()
                 }
                 Text("分钟")
+            }
+            Spacer()
+            HStack {
+//                Text("下次提醒时间：")
+//                Text("\(nextTriggerTime)")
+                List(tasks, id: \.id) { task in
+                    TaskView(task: task)
+                }
             }
             Spacer()
             HStack {
@@ -156,12 +190,19 @@ struct MainView: View {
                 }
             }
             Spacer()
-        }.onAppear(perform: settingDate)
+        }
+        .onAppear(perform: settingDate)
+        .onReceive(receiver, perform: { _ in
+            getNotificationList()
+            print("on receiver")
+        })
     }
 }
 
 struct MainView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        MainView().environmentObject(AuthSettings())
+        MainView().environmentObject(AuthSettings()).environmentObject(SystemTheme(isDark: true))
+        MainView().environmentObject(AuthSettings()).environmentObject(SystemTheme(isDark: false))
     }
 }

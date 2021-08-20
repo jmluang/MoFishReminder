@@ -9,9 +9,10 @@ import SwiftUI
 import UserNotifications
 
 @main
-struct FishTouchReminderApp: App {
+struct FishTouchReminderApp : App {
     @StateObject private var settings = AuthSettings()
-
+    @StateObject private var systheme = SystemTheme(isDark: false)
+    
 //    let persistenceController = PersistenceController.shared
     func getNotificationAuthorization() {
         let center = UNUserNotificationCenter.current()
@@ -33,7 +34,11 @@ struct FishTouchReminderApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            MainView().environmentObject(settings).onAppear(perform: getNotificationAuthorization)
+            MainView()
+                .environmentObject(systheme)
+                .environmentObject(settings)
+                .onAppear(perform: getNotificationAuthorization)
+                .preferredColorScheme(systheme.isDark ? .dark : .light)
         }
     }
 }
