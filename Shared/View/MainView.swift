@@ -35,7 +35,7 @@ struct MainView: View {
             return
         }
         
-        let task = Task(Title: thetitle, Body: thebody, Interval: interval, Repeat: true, CreateTime: Date())
+        let task = Task(Title: thetitle, Body: thebody, Interval: TimeInterval(TimeInterval(interval) * 60), Repeat: true, CreateTime: Date())
         createNotification(task: task)
     }
     
@@ -46,7 +46,7 @@ struct MainView: View {
         content.body = task.Body
         content.userInfo["create_time"] = task.CreateTime
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(task.Interval * 60), repeats: task.Repeat)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(task.Interval), repeats: task.Repeat)
         let request = UNNotificationRequest(identifier: task.id.uuidString, content: content, trigger: trigger)
 
         // Schedule the request with the system.
@@ -93,7 +93,7 @@ struct MainView: View {
                 current.addTimeInterval(count_down)
 //                print(current.description(with: Locale(identifier: "ZH_CN")))
 
-                let t = Task(id: UUID(uuidString: request.identifier)!, Title: request.content.title, Body: request.content.body, Interval: Int(trigger.timeInterval), Repeat: trigger.repeats, CreateTime: create_time, NextTriggertime: formatter.string(from: current), CountDownString: count_down.stringTime(false))
+                let t = Task(id: UUID(uuidString: request.identifier)!, Title: request.content.title, Body: request.content.body, Interval: trigger.timeInterval, Repeat: trigger.repeats, CreateTime: create_time, NextTriggertime: formatter.string(from: current), CountDownString: count_down.stringTime(false))
                 let index = tasks.indexOf(task: t)
                 if index == -1 {
                     tasks.append(t)

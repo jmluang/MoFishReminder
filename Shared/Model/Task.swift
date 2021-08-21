@@ -11,7 +11,7 @@ struct Task : Equatable, Hashable, Identifiable {
     var id: UUID = UUID()
     var Title: String
     var Body: String
-    var Interval: Int
+    var Interval: TimeInterval
     var Repeat: Bool
     var CreateTime: Date
     var NextTriggertime: String?
