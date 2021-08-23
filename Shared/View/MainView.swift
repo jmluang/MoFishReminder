@@ -17,7 +17,7 @@ struct MainView: View {
     @State private var startTime: Date = Date()
     @State private var endTime: Date = Date()
     @State private var allways: Bool = true
-    @State private var interval:Int = 20
+    @State private var interval: Int = 20
     @State var receiver = Timer.publish(every: 1, on: .current, in: .default).autoconnect()
     @State private var tasks: [Task] = []
     
@@ -35,7 +35,7 @@ struct MainView: View {
             return
         }
         
-        let task = Task(Title: thetitle, Body: thebody, Interval: TimeInterval(TimeInterval(interval) * 60), Repeat: true, CreateTime: Date())
+        let task = Task(Title: thetitle, Body: thebody, Interval: TimeInterval(TimeInterval(Int(interval)) * 60), Repeat: true, CreateTime: Date())
         createNotification(task: task)
     }
     
@@ -73,7 +73,7 @@ struct MainView: View {
             let formatter = DateFormatter()
             formatter.timeZone = TimeZone(identifier: "Asia/Shanghai")
             formatter.locale = Locale(identifier: "zh_CN")
-            formatter.dateStyle = .medium
+//            formatter.dateStyle = .medium
             formatter.timeStyle = .medium
             
             for request in requests {
@@ -112,6 +112,16 @@ struct MainView: View {
         tasks.removeAll()
     }
     
+    func delete(at offsets: IndexSet) {
+        guard offsets.count > 0 else {
+            return
+        }
+        let task = tasks[offsets.first!]
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [task.id.uuidString])
+        tasks.remove(atOffsets: offsets)
+    }
+
+    
     var body: some View {
         HStack {
             Text(Settings.isAuthNotification ? "Granted!" : "Not Granted")
@@ -145,24 +155,24 @@ struct MainView: View {
                     .font(Font.system(size: 18, design: .default))
                 Spacer()
             }
-            HStack {
-                Toggle(isOn: $allways) {
-                    Text("全天")
-                }
-                if !allways {
-                    Group() {
-                        DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: {})
-                            .fixedSize()
-                        Text("-")
-                        DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label:{})
-                            .fixedSize()
-                    }
-                }
-            }
+//            HStack {
+//                Toggle(isOn: $allways) {
+//                    Text("全天")
+//                }
+//                if !allways {
+//                    Group() {
+//                        DatePicker(selection: $startTime, displayedComponents: .hourAndMinute, label: {})
+//                            .fixedSize()
+//                        Text("-")
+//                        DatePicker(selection: $endTime, displayedComponents: .hourAndMinute, label:{})
+//                            .fixedSize()
+//                    }
+//                }
+//            }.hidden()
             HStack {
                 Text("每")
                 Stepper(value: $interval, in: 1...360) {
-                    Text("\(interval)")
+                    TextField("\(interval)", value: $interval, formatter: NumberFormatter())
                         .font(Font.system(size: 22))
                         .foregroundColor(Theme.isDark ? Color.white : Color.black)
                         .fixedSize()
@@ -173,9 +183,13 @@ struct MainView: View {
             HStack {
 //                Text("下次提醒时间：")
 //                Text("\(nextTriggerTime)")
-                List(tasks, id: \.id) { task in
-                    TaskView(task: task)
+                List {
+                    ForEach(tasks, id: \.id) { task in
+                        TaskView(task: task)
+                    }
+                    .onDelete(perform: delete)
                 }
+                .animation(.easeInOut)
             }
             Spacer()
             HStack {

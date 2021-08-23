@@ -12,26 +12,32 @@ struct TaskView: View {
     var body: some View {
         VStack {
             HStack {
-                VStack {
+                VStack(alignment: .leading) {
+                    Text("每")
+                        .foregroundColor(Color.primary)
+                        .font(.system(size: 12))
+                    Text("\(task.Interval.toString(.Hour, .Minute))")
+                            .font(.largeTitle)
                     Text(task.Repeat ? "重复" : "不重复")
                         .foregroundColor(.gray)
-                    HStack {
-                        Text("\(task.Interval) Mins")
-                            .font(.title)
-                    }
+                        .font(.system(size: 12))
                 }.padding()
                 Spacer()
-                VStack {
+                VStack(alignment: .trailing, spacing: 4) {
                     Text(task.NextTriggertime!)
+                        .font(.largeTitle)
                     Text(task.CountDownString!)
+                        .foregroundColor(Color.primary)
+                        .font(.system(size: 14))
                 }.padding()
             }
+            Divider()
         }
     }
 }
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskView(task: Task(Title: "title", Body: "body", Interval: 60, Repeat: true, CreateTime: Date(), NextTriggertime: "nextTriggerTime", CountDownString: "0:02"))
+        TaskView(task: Task(Title: "title", Body: "body", Interval: TimeInterval(20 * 60), Repeat: true, CreateTime: Date(), NextTriggertime: "nextTriggerTime", CountDownString: "0:02"))
     }
 }

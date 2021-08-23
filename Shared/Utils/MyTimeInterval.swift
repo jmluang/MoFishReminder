@@ -8,6 +8,13 @@
 import Foundation
 
 extension TimeInterval {
+    enum FormatType{
+        case Hour
+        case Minute
+        case Second
+        case MilliSecond
+    }
+    
     private var milliseconds: Int {
         return Int((truncatingRemainder(dividingBy: 1)) * 1000)
     }
@@ -23,7 +30,35 @@ extension TimeInterval {
     private var hours: Int {
         return Int(self) / 3600
     }
-
+    
+    func toString(_ types: FormatType...) -> String {
+        var formated_string = ""
+        for t in types {
+            switch t {
+            case .Hour:
+                if self.hours > 0 {
+                    formated_string += "\(self.hours)h"
+                }
+                break
+            case .Minute:
+                if self.minutes > 0 {
+                    formated_string += " \(self.minutes)m"
+                }
+                break
+            case .Second:
+                if self.seconds > 0 {
+                    formated_string += " \(self.seconds)s"
+                }
+                break
+            case .MilliSecond:
+                formated_string += " \(self.milliseconds)ms"
+                break
+            }
+        }
+        
+        return formated_string
+    }
+    
     func stringTime(_ showMicrotime: Bool) -> String {
         if hours != 0 {
             return "\(hours)h \(minutes)m \(seconds)s"
